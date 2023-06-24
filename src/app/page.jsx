@@ -1,12 +1,13 @@
 "use client"
+import Effect from '@/components/(sidebar)/effect/page'
+import Layout from '@/components/(sidebar)/layout/page'
+import Reducer from '@/components/(sidebar)/reducer/page'
+import Ref from '@/components/(sidebar)/ref/page'
+import State from '@/components/(sidebar)/state/page'
 import Image from 'next/image'
-import Sidebar from '@/components/sidebar/page'
 import { useReducer } from 'react'
 
-import State from '@/components/(sidebar)/state/page'
-import Ref from '@/components/(sidebar)/ref/page'
-import Reducer from '@/components/(sidebar)/reducer/effect'
-import Layout from '@/components/(sidebar)/layout/page'
+
 
 function Home() {
 
@@ -21,19 +22,25 @@ function Home() {
     },
     {
       id: 2,
-      name: "useRef",
-      click: { type: "REF" }
-
-    },
-    {
-      id: 3,
       name: "useReducer",
       click: { type: "REDUCER" }
 
     },
     {
+      id: 3,
+      name: "useEffect",
+      click: { type: "EFFECT" }
+
+    },
+    {
       id: 4,
-      name: "useLayout",
+      name: "useRef",
+      click: { type: "REF" }
+
+    },
+    {
+      id: 5,
+      name: "useLayoutEffect",
       click: { type: "LAYOUT" }
 
     },
@@ -44,11 +51,15 @@ function Home() {
       case "STATE":
         return { page: <State></State> }
         break;
+      case "REDUCER":
+        return { page: <Reducer></Reducer> }
+        break
+      case "EFFECT":
+        return { page: <Effect></Effect> }
+        break
       case "REF":
         return { page: <Ref></Ref> }
         break;
-      case "REDUCER":
-        return { page: <Reducer></Reducer> }
       case "LAYOUT":
         return { page: <Layout></Layout> }
         break;
@@ -61,7 +72,6 @@ function Home() {
 
   return (
     <main className='w-full h-full  flex gap-10'>
-
       <nav className=' h-full w-1/6  flex flex-col items-center py-6 rounded-md border-solid border-2 border-slate-200'>
         {links.map((v, i, a) => {
           return (
@@ -70,7 +80,7 @@ function Home() {
         })}
       </nav>
 
-      <div className=' w-full h-full flex rounded-md border-solid border-2 border-slate-200'>
+      <div className=' w-full h-full flex justify-center items-center rounded-md border-solid border-2 border-slate-200'>
         {state.page ? state.page : ""}
       </div>
 
