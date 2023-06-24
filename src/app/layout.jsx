@@ -14,9 +14,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className='px-5 md:px-20 lg:px-40 flex flex-col justify-between bg-teal-50'><Navbar></Navbar> </div>
-        <div className='h-screen w-screen px-5 md:px-20 lg:px-40 flex flex-col justify-between'> {children}</div>
-        <div className='px-5 md:px-20 lg:px-40 flex flex-col justify-between bg-teal-50'><Footer></Footer></div>
+        <div className='px-5 md:px-20 lg:px-40 flex flex-col justify-between bg-white'><Navbar></Navbar> </div>
+        <div className='h-screen w-screen px-5 md:px-20 lg:px-40 flex flex-col justify-between '> {children}</div>
+        <div className='px-5 md:px-20 lg:px-40 flex flex-col justify-between bg-white'><Footer></Footer></div>
       </body>
     </html>
   )

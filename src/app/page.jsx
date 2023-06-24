@@ -10,6 +10,8 @@ import Layout from '@/components/(sidebar)/layout/page'
 
 function Home() {
 
+  // selector 
+
   const links = [
     {
       id: 1,
@@ -55,13 +57,12 @@ function Home() {
     }
   }
 
-
   const [state, dispatch] = useReducer(reducer, { page: false })
 
   return (
-    <main className='w-full h-full my-10 flex gap-10'>
+    <main className='w-full h-full  flex gap-10'>
 
-      <nav className=' h-full w-1/6  flex flex-col items-center py-6 rounded-md bg-teal-50 shadow-[0_3px_10px_rgb(0,0,0,0.1)]'>
+      <nav className=' h-full w-1/6  flex flex-col items-center py-6 rounded-md border-solid border-2 border-slate-200'>
         {links.map((v, i, a) => {
           return (
             <button key={i} onClick={() => { dispatch(v.click) }} className=' w-full h-12 flex items-center px-5 hover:bg-teal-500 hover:text-white transition-all ease-in-out duration-300 '>{v.name}</button>
@@ -69,10 +70,8 @@ function Home() {
         })}
       </nav>
 
-      <div className='bg-teal-50 w-full h-full grid  grid-cols-1 '>
-        <button className='transition ease-in-out duration-300'>
-          {state.page ? state.page : ""}
-        </button>
+      <div className=' w-full h-full flex rounded-md border-solid border-2 border-slate-200'>
+        {state.page ? state.page : ""}
       </div>
 
 
