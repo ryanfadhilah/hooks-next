@@ -71,16 +71,16 @@ function Home() {
   const [state, dispatch] = useReducer(reducer, { page: false })
 
   return (
-    <main className='w-full h-full  flex gap-10'>
+    <main className='w-full h-full  flex gap-2 lg:gap-10'>
       <nav className=' h-full w-1/6  flex flex-col items-center py-6 rounded-md border-solid border-2 border-slate-200'>
         {links.map((v, i, a) => {
           return (
-            <button key={i} onClick={() => { dispatch(v.click) }} className=' w-full h-12 flex items-center px-5 hover:bg-teal-500 hover:text-white transition-all ease-in-out duration-300 '>{v.name}</button>
+            <button key={i} onClick={() => { dispatch(v.click) }} className=' w-full h-12 flex items-center px-2 md:px-5 hover:bg-teal-500 hover:text-white transition-all ease-in-out duration-300 '>{v.name}</button>
           )
         })}
       </nav>
 
-      <div className=' w-full h-full flex justify-center items-center rounded-md border-solid border-2 border-slate-200'>
+      <div className=' w-full h-full p-2 lg:p-5 flex justify-center items-center rounded-md border-solid border-2 border-slate-200 overflow-auto'>
         {state.page ? state.page : ""}
       </div>
 
