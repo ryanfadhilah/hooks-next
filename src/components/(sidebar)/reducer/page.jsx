@@ -56,29 +56,21 @@ const Reducer = () => {
     const [state, dispatch] = useReducer(reducer, { number: 0, picture: false })
 
     return (
-        <div className='w-full h-full'>
+        <main className='w-full h-full flex flex-col gap-5 '>
+            <h1>useReducer</h1>
 
-            <article>
-                <p>"useReducer" is a React Hook that lets you add a reducer to your component.</p>
-                <p>"useReducer" is usefull to create and handle multiple state at the same time</p>
-                <p>reducer: The reducer function that specifies how the state gets updated. It must be pure, should take the state and action as arguments, and should return the next state. State and action can be of any types.</p>
-                <p>Check out example below</p>
-                <p>Source code : github</p>
-                <p>Official Documentation</p>
-            </article>
-
-            <div className='flex flex-col gap-5 bg-teal-50 h-96'>
-                <div className=' h-1/3 flex justify-center items-center'>{state.number}</div>
-
-                <div className='w-full h-1/3 grid grid-cols-5'>
-                    <button className='bg-teal-100 w-full h-full' onClick={() => dispatch({ type: "INCREMENT" })}>Increment + 1</button>
-                    <button className='bg-teal-100 w-full h-full' onClick={() => dispatch({ type: "DECREMENT" })}>Increment - 1</button>
-                    <button className='bg-teal-100 w-full h-full' onClick={() => dispatch({ type: "BOTH" })}>{state.picture ? "hide" : "show"} & Increment</button>
-                    <button className='bg-teal-100 w-full h-full' onClick={() => dispatch({ type: "HIDE" })}>{state.picture ? "hide" : "show"} the cats</button>
-                    <button className='bg-teal-100 w-full h-full' onClick={() => dispatch({ type: "RESET" })}>Reset</button>
-                </div>
-
-                <div className='h-1/3 flex justify-center'>
+            <div className='flex flex-col gap-5 bg-white h-96'>
+                <div className=' h-1/2 flex justify-center items-center'>
+                    {state.picture ? catLink.map((v, i, a) => {
+                        return <Image
+                            src={v.src}
+                            width={v.width}
+                            height={v.height}
+                            alt={v.alt} />
+                    }) : ""}
+                    <p className='text-2xl font-semibold'>
+                        {state.number}
+                    </p>
                     {state.picture ? catLink.map((v, i, a) => {
                         return <Image
                             src={v.src}
@@ -87,24 +79,17 @@ const Reducer = () => {
                             alt={v.alt} />
                     }) : ""}
                 </div>
+
+                <div className='w-full h-1/2 grid grid-cols-5'>
+                    <button className='bg-teal-100 w-full h-full' onClick={() => dispatch({ type: "INCREMENT" })}>Increment + 1</button>
+                    <button className='bg-teal-100 w-full h-full' onClick={() => dispatch({ type: "DECREMENT" })}>Dncrement - 1</button>
+                    <button className='bg-teal-100 w-full h-full' onClick={() => dispatch({ type: "HIDE" })}>{state.picture ? "hide" : "show"} the cats</button>
+                    <button className='bg-teal-100 w-full h-full' onClick={() => dispatch({ type: "BOTH" })}>{state.picture ? "hide" : "show"} & Increment</button>
+                    <button className='bg-teal-100 w-full h-full' onClick={() => dispatch({ type: "RESET" })}>Reset</button>
+                </div>
             </div>
 
-            <article>
-                <div>
-                    <h1>Usage</h1>
-                    <p>Adding reducer to component</p>
-                    <p>Writing the reducer function</p>
-                    <p>Avoiding recreating inital state </p>
-                </div>
-                <div>
-                    <h1>Troubleshooting</h1>
-                    <p>Undefined data after dispatching</p>
-                    <p>Re-render loop</p>
-                    <p>Fail updating the state</p>
-                </div>
-            </article>
-
-        </div>
+        </main>
     )
 }
 
