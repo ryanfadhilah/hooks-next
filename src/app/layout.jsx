@@ -15,11 +15,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className='w-screen h-screen flex flex-col justify-between '>
-          <div className=' hidden px-2 md:px-20 lg:px-40 lg:flex lg:flex-col justify-between bg-black text-white'><Navbar></Navbar> </div>
-          <div className=' w-full h-full px-2 md:px-20 lg:px-40 flex flex-col justify-between my-7 overflow-y-scroll'> {children}</div>
-          <div className='px-2 md:px-20 lg:px-40 flex flex-col justify-between bg-black text-white'><Footer></Footer></div>
+        <div className='h-screen w-screen flex flex-col justify-between px-5 md:px-20 lg:px-40'>
+          <Navbar></Navbar>
+          {children}
+          <Footer></Footer>
         </div>
+
       </body>
     </html>
   )

@@ -1,88 +1,76 @@
 "use client"
-import Effect from '@/components/(sidebar)/effect/page'
-import Layout from '@/components/(sidebar)/layout/page'
-import Reducer from '@/components/(sidebar)/reducer/page'
-import Ref from '@/components/(sidebar)/ref/page'
-import State from '@/components/(sidebar)/state/page'
 import Image from 'next/image'
-import { useReducer } from 'react'
+import Link from 'next/link'
+import rimage from './rimage.png'
 
-
+const pages = [
+  {
+    name: "useState",
+    herf: "/hookState"
+  },
+  {
+    name: "useState",
+    herf: "/hookState"
+  },
+  {
+    name: "useState",
+    herf: "/hookState"
+  },
+  {
+    name: "useState",
+    herf: "/hookState"
+  },
+  {
+    name: "useState",
+    herf: "/hookState"
+  },
+  {
+    name: "useState",
+    herf: "/hookState"
+  },
+  {
+    name: "useState",
+    herf: "/hookState"
+  },
+  {
+    name: "useState",
+    herf: "/hookState"
+  },
+  {
+    name: "useState",
+    herf: "/hookState"
+  },
+  {
+    name: "useState",
+    herf: "/hookState"
+  },
+]
 
 function Home() {
 
-  // selector 
-
-  const links = [
-    {
-      id: 1,
-      name: "useState",
-      click: { type: "STATE" }
-
-    },
-    {
-      id: 2,
-      name: "useReducer",
-      click: { type: "REDUCER" }
-
-    },
-    {
-      id: 3,
-      name: "useEffect",
-      click: { type: "EFFECT" }
-
-    },
-    {
-      id: 4,
-      name: "useRef",
-      click: { type: "REF" }
-
-    },
-    {
-      id: 5,
-      name: "useLayoutEffect",
-      click: { type: "LAYOUT" }
-
-    },
-  ]
-
-  function reducer(state, action) {
-    switch (action.type) {
-      case "STATE":
-        return { page: <State></State> }
-        break;
-      case "REDUCER":
-        return { page: <Reducer></Reducer> }
-        break
-      case "EFFECT":
-        return { page: <Effect></Effect> }
-        break
-      case "REF":
-        return { page: <Ref></Ref> }
-        break;
-      case "LAYOUT":
-        return { page: <Layout></Layout> }
-        break;
-      default:
-        break;
-    }
-  }
-
-  const [state, dispatch] = useReducer(reducer, { page: false })
 
   return (
-    <main className='w-full h-full  flex gap-2 lg:gap-10'>
-      <nav className=' h-full w-1/6  flex flex-col items-center py-6 rounded-md border-solid border-2 border-slate-200'>
-        {links.map((v, i, a) => {
-          return (
-            <button key={i} onClick={() => { dispatch(v.click) }} className=' w-full h-12 flex items-center px-2 md:px-5 hover:bg-teal-500 hover:text-white transition-all ease-in-out duration-300 '>{v.name}</button>
-          )
-        })}
-      </nav>
+    <main className=" flex flex-col w-full h-full gap-5 items-center">
 
-      <div className=' w-full h-full p-2 lg:p-5 flex justify-center items-center rounded-md border-solid border-2 border-slate-200 overflow-auto'>
-        {state.page ? state.page : ""}
+      <div className='flex items-center justify-center gap-2'>
+        <Image
+          src={rimage}
+          width={65}
+          height={65}
+          alt="Picture of the author"
+          className='animate-spin'
+        />
+        <h1 className='text-4xl'>React-Hooks</h1>
       </div>
+
+      <div className='w-5/6 lg:w-3/6 h-full grid grid-cols-3 gap-3'>
+        {pages.map((v, i, a) => {
+          return (<Link className=' flex flex-row-reverse items-end bg-teal-400 hover:bg-orange-400 hover:shadow-lg transition-all ease-in-out duration-200' href={v.herf} key={i}>
+            <p className=' text-white p-2 lg:p-5 lg:text-xl font-semibold'>{v.name}</p>
+          </Link>)
+        })}
+      </div>
+
 
 
     </main>
