@@ -25,12 +25,12 @@ const pages = [
     herf: "/hookLayoutEffect"
   },
   {
-    name: "useState",
-    herf: "/hookState"
+    name: "useImperative",
+    herf: "/hookImperativeHandler"
   },
   {
-    name: "useState",
-    herf: "/hookState"
+    name: "useContex",
+    herf: "/hookContex"
   },
   {
     name: "useState",

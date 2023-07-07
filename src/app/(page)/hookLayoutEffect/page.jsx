@@ -9,6 +9,20 @@ const HookLayoutEffect = () => {
     const [dataEffect, setDataEffect] = useState([])
     const [dataLayout, setDataLayout] = useState([])
 
+    useLayoutEffect(() => {
+        async function getData() {
+            const res = await fetch('https://jsonplaceholder.typicode.com/comments', {
+                cache: "no-store"
+            })
+            if (!res.ok) {
+                return notFound()
+            }
+            const temp = await res.json()
+            setDataLayout(temp)
+        }
+        getData()
+    }, [])
+
     useEffect(() => {
         async function getData() {
             const result = await fetch('https://jsonplaceholder.typicode.com/comments', {
@@ -23,19 +37,6 @@ const HookLayoutEffect = () => {
         getData()
     }, [])
 
-    useLayoutEffect(() => {
-        async function getData() {
-            const res = await fetch('https://jsonplaceholder.typicode.com/comments', {
-                cache: "no-store"
-            })
-            if (!res.ok) {
-                return notFound()
-            }
-            const temp = await res.json()
-            setDataLayout(temp)
-        }
-        getData()
-    }, [])
 
     return (
         <main className='w-full h-full grid grid-cols-1 items-center'>
