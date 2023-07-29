@@ -8,10 +8,12 @@ const hookImperativeHandler = () => {
 
     return (
         <div className='grid grid-cols-1 bg-teal-100'>
-            <button onClick={() => { buttonRef.current.alternateToggle() }}>Parent Button</button>
+            <button onClick={() => { buttonRef.current.increment() }}>Parent Button ( + 1 ) </button>
             <ImperativeButton ref={buttonRef} className="grid grid-cols-1 bg-teal-500"></ImperativeButton>
         </div>
     )
 }
+
+
 
 export default hookImperativeHandler

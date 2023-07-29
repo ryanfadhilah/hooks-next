@@ -2,20 +2,23 @@
 import React, { forwardRef, useImperativeHandle, useState } from 'react'
 
 const ImperativeButton = forwardRef((props, fref) => {
-    const [text, setText] = useState(false)
+    const [text, setText] = useState(0)
 
     useImperativeHandle(fref, () => ({
-        alternateToggle() {
-            setText(!text)
+        increment() {
+            setText(text + 1)
+        },
+        decrement() {
+            setText(text - 1)
         }
     }))
 
     return (
         <>
-            <button onClick={() => setText(!text)}>
-                Child Button
+            <button onClick={() => setText(text - 1)}>
+                Child Button ( - 1 )
             </button>
-            <>{text ? "child state" : ""}</>
+            <>Child State : {text}</>
         </>
 
     )
