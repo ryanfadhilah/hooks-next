@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className='h-screen w-screen flex flex-col justify-between px-5 md:px-20 lg:px-40'>
+        <div className='h-screen w-screen bg-slate-950 text-white flex flex-col justify-between px-5 md:px-20 lg:px-40'>
           <Navbar></Navbar>
           {children}
           <Footer></Footer>

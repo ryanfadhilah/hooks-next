@@ -14,12 +14,12 @@ const ImperativeButton = forwardRef((props, fref) => {
     }))
 
     return (
-        <>
-            <button onClick={() => setText(text - 1)}>
+        <section className='flex flex-col p-5 gap-5 bg-teal-950 rounded-xl'>
+            <button className='p-5 bg-teal-600 rounded-xl hover:bg-yellow-500' onClick={() => setText(text - 1)}>
                 Child Button ( - 1 )
             </button>
-            <>Child State : {text}</>
-        </>
+            <div className='flex justify-center mx-5 p-5 rounded-xl bg-white text-black'>Child State : {text}</div>
+        </section>
 
     )
 })

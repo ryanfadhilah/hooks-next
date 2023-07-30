@@ -65,7 +65,7 @@ function Home() {
 
       <div className='w-5/6 lg:w-3/6 h-full grid grid-col-1 md:grid-cols-3 gap-3 '>
         {pages.map((v, i, a) => {
-          return (<Link className='flex md:flex-row-reverse items-end rounded-md lg:text-xl bg-teal-400 hover:bg-black hover:shadow-lg shadow-black transition-all ease-in-out duration-200' href={v.herf} key={i}>
+          return (<Link className='flex md:flex-row-reverse items-end rounded-md lg:text-xl bg-teal-400 hover:bg-yellow-500 hover:shadow-lg shadow-black transition-all ease-in-out duration-200' href={v.herf} key={i}>
             <p className=' text-white p-2 lg:p-5 font-semibold'>{v.name}</p>
           </Link>)
         })}

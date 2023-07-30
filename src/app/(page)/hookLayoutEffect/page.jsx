@@ -39,15 +39,18 @@ const HookLayoutEffect = () => {
 
 
     return (
-        <main className='w-full h-full grid grid-cols-1 items-center'>
+        <main className='w-full h-full grid grid-cols-1  items-center'>
 
             {/* App */}
-            <div>
-                <h1>useEffect - slower</h1>
-                <div className='w-full h-72 bg-teal-400 grid grid-cols-1 border-solid border-2 border-slate-700 overflow-y-scroll p-5 gap-5'>
+            <div className='flex flex-col gap-2'>
+                <span className='flex justify-between p-5 bg-yellow-100 text-black  rounded-lg'>
+                    <h1>useEffect - slower</h1>
+                    <h1>Render after everything is ready </h1>
+                </span>
+                <div className='w-full h-52 bg-teal-950 rounded-md grid grid-cols-1 border-solid border-2 border-slate-700 overflow-y-scroll p-5 gap-5'>
                     {dataEffect.map((v, i, a) => {
                         return (
-                            <div className='grid grid-cols-1 bg-white p-5 rounded-md' key={i}>
+                            <div className='grid grid-cols-1 bg-teal-900 text-white p-5 rounded-md' key={i}>
                                 <div>Id : {v.id}</div>
                                 <div>Name : {v.name}</div>
                                 <div>Email : {v.email}</div>
@@ -56,12 +59,15 @@ const HookLayoutEffect = () => {
                 </div>
             </div>
 
-            <div>
-                <h1>useLayoutEffect  - faster</h1>
-                <div className='w-full h-72 bg-teal-400 grid grid-cols-1 border-solid border-2 border-slate-700 overflow-y-scroll p-5 gap-5'>
+            <div className='flex flex-col gap-2'>
+                <span className='flex justify-between p-5 bg-yellow-100 text-black  rounded-lg'>
+                    <h1>useLayoutEffect  - faster</h1>
+                    <h1>Render UI, Wait for Data</h1>
+                </span>
+                <div className='w-full h-52 bg-teal-950 rounded-md grid grid-cols-1 border-solid border-2 border-slate-700 overflow-y-scroll p-5 gap-5'>
                     {dataLayout.map((v, i, a) => {
                         return (
-                            <div className='grid grid-cols-1 bg-white p-5 rounded-md' key={i}>
+                            <div className='grid grid-cols-1 bg-teal-900 text-white p-5 rounded-md' key={i}>
                                 <div>Id : {v.id}</div>
                                 <div>Name : {v.name}</div>
                                 <div>Email : {v.email}</div>

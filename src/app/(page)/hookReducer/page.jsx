@@ -30,28 +30,41 @@ const HookReducer = () => {
         <main className='w-full h-full grid grid-cols-1 items-center'>
 
             {/* App */}
-            <div className='w-full h-72 grid grid-cols-1 border-solid border-2 border-slate-500'>
-                <div className='h-36 gap-16 bg-teal-50 flex justify-center items-center text-2xl font-semibold'>
-                    {state.photo ? <Image
-                        src={cat}
-                        width={144}
-                        height={144}
-                        alt="cat"
-                    /> : ""}
-                    {state.number}
-                    {state.photo ? <Image
-                        src={cat}
-                        width={144}
-                        height={144}
-                        alt="cat"
-                    /> : ""}
-                </div>
+            <div className='w-full h-full flex flex-col gap-5'>
+                <section className='flex flex-col bg-yellow-100 text-black p-5 gap-5 rounded-xl'>
+                    <p> <b className='font-bold'>Use Reducer</b> is used to create a state that contains data</p>
+                    <p>Use Reducer has a built in function that can be used to manipulate the data of the current state</p>
+                    <p>example : const [state, dispacth] = useReducer(reducer, any data type)</p>
+                </section>
 
-                <div className='h-36 grid grid-cols-3'>
-                    <button className='bg-teal-500 text-white font-semibold hover:bg-black transition-all ease-in-out duration-200' onClick={() => dispacth({ type: "INCREMENT" })} >Increment</button>
-                    <button className='bg-teal-500 text-white font-semibold hover:bg-black transition-all ease-in-out duration-200' onClick={() => dispacth({ type: "SHOW" })} >{state.photo ? "Hide" : "Show"} Cats</button>
-                    <button className='bg-teal-500 text-white font-semibold hover:bg-black transition-all ease-in-out duration-200' onClick={() => dispacth({ type: "BOTH" })} >Both Actions</button>
-                </div>
+                <section className='flex flex-col p-5 gap-5 rounded-xl bg-teal-950 w-full h-full'>
+                    <div className='bg-teal-900 text-white rounded-xl p-5 md:gap-52 flex items-center justify-center'>
+                        {state.photo ? <Image
+                            src={cat}
+                            width={144}
+                            height={144}
+                            alt="cat"
+                        /> : ""}
+                        <p className='font-semibold gap-7 justify-center items-center flex flex-col'>
+                            <span className=' underline'>Current Number State</span>
+                            <span >{state.number}</span>
+                            <span className=' underline'>Current Photo State</span>
+                            <span>{state.photo ? "True" : "False"}</span>
+                        </p>
+                        {state.photo ? <Image
+                            src={cat}
+                            width={144}
+                            height={144}
+                            alt="cat"
+                        /> : ""}
+                    </div>
+
+                    <div className='w-full h-full grid grid-cols-3 gap-5'>
+                        <button className='rounded-xl bg-emerald-800 text-white font-semibold hover:bg-yellow-200 hover:text-black transition-all ease-in-out duration-200' onClick={() => dispacth({ type: "INCREMENT" })} >Increment</button>
+                        <button className='rounded-xl bg-emerald-800 text-white font-semibold hover:bg-yellow-200 hover:text-black transition-all ease-in-out duration-200' onClick={() => dispacth({ type: "SHOW" })} >{state.photo ? "Hide" : "Show"} Cats</button>
+                        <button className='rounded-xl bg-emerald-800 text-white font-semibold hover:bg-yellow-200 hover:text-black transition-all ease-in-out duration-200' onClick={() => dispacth({ type: "BOTH" })} >Both Actions</button>
+                    </div>
+                </section>
             </div>
 
         </main>
