@@ -1,49 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-
-const pages = [
-  {
-    name: "Intro",
-    herf: "/Intro",
-  },
-  {
-    name: "useState",
-    herf: "/hookState",
-  },
-  {
-    name: "useReducer",
-    herf: "/hookReducer",
-  },
-  {
-    name: "useEffect",
-    herf: "/hookEffect",
-  },
-  {
-    name: "useRef",
-    herf: "/hookRef",
-  },
-  {
-    name: "useLayoutEffect",
-    herf: "/hookLayoutEffect",
-  },
-  {
-    name: "useImperative",
-    herf: "/hookImperativeHandler",
-  },
-  {
-    name: "useContex",
-    herf: "/hookContex",
-  },
-  {
-    name: "useMemo",
-    herf: "/hookState",
-  },
-  {
-    name: "useCallback",
-    herf: "/hookState",
-  },
-];
+import { pages } from "./constant";
 
 function Home() {
   return (

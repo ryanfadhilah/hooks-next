@@ -49,6 +49,12 @@ const HookState = () => {
             >
               <p>setNumber(number - 1)</p> Decrement
             </button>
+            <input
+              className="text-black"
+              placeholder="setNumber(event.target.value)"
+              onChange={(e) => setNumber(e.target.value)}
+              type="text"
+            />
           </div>
         </section>
       </div>
