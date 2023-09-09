@@ -1,9 +1,12 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import rimage from "./rimage.png";
 
 const pages = [
+  {
+    name: "Intro",
+    herf: "/Intro",
+  },
   {
     name: "useState",
     herf: "/hookState",
@@ -33,15 +36,11 @@ const pages = [
     herf: "/hookContex",
   },
   {
-    name: "useState",
+    name: "useMemo",
     herf: "/hookState",
   },
   {
-    name: "useState",
-    herf: "/hookState",
-  },
-  {
-    name: "useState",
+    name: "useCallback",
     herf: "/hookState",
   },
 ];
@@ -51,7 +50,7 @@ function Home() {
     <main className=" flex flex-col w-full h-full gap-5 items-center">
       <div className="flex flex-row-reverse md:flex-row items-center md:justify-center gap-2">
         <Image
-          src={rimage}
+          src={"/rimage.png"}
           width={35}
           height={35}
           alt="Picture of the author"
