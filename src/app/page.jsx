@@ -34,18 +34,18 @@ const pages = [
     name: "useContex",
     herf: "/hookContex",
   },
-  {
-    name: "useMemo",
-    herf: "/hookContex",
-  },
-  {
-    name: "useCallback",
-    herf: "/hookContex",
-  },
-  {
-    name: "useTransition",
-    herf: "/hookContex",
-  },
+  // {
+  //   name: "useMemo",
+  //   herf: "/hookContex",
+  // },
+  // {
+  //   name: "useCallback",
+  //   herf: "/hookContex",
+  // },
+  // {
+  //   name: "useTransition",
+  //   herf: "/hookContex",
+  // },
 ];
 
 function Home() {

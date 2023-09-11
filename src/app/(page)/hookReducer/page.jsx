@@ -31,12 +31,12 @@ const HookReducer = () => {
         <section className="flex flex-col bg-yellow-100 text-black p-5 gap-5 rounded-xl">
           <p>
             {" "}
-            <b className="font-bold">Use Reducer</b> is used to create a state
-            that contains data
+            <b className="font-bold">Use Reducer</b> is used to create multiple
+            state that contains data. It is the advanced version of useState.
           </p>
           <p>
             Use Reducer has a built in function that can be used to manipulate
-            the data of the current state
+            multiple the data of the current state.
           </p>
           <p>
             example : const [state, dispacth] = useReducer(reducer, any data

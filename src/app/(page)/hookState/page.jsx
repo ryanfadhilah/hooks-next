@@ -13,11 +13,11 @@ const HookState = () => {
           <p>
             {" "}
             <b className="font-bold">Use State</b> is used to create a state
-            that contains data
+            that contains data.
           </p>
           <p>
             Use state has a built in function that can be used to manipulate the
-            data of the current state
+            data of the current state.
           </p>
           <p>example : const [data,setData = useState(initial value)]</p>
         </section>
@@ -49,12 +49,6 @@ const HookState = () => {
             >
               <p>setNumber(number - 1)</p> Decrement
             </button>
-            <input
-              className="text-black"
-              placeholder="setNumber(event.target.value)"
-              onChange={(e) => setNumber(e.target.value)}
-              type="text"
-            />
           </div>
         </section>
       </div>
