@@ -18,8 +18,8 @@ const HookContext = () => {
             you read and subscribe to context from your component.
           </p>
           <p>
-            It allows the <b className="font-bold">Child Component</b>{" "}
-            manipulate data of <b className="font-bold">Parent state</b>
+            It allows the <b className="font-bold">Child Component</b> to have
+            ACCESS <b className="font-bold">Parent State & Function</b>
           </p>
           <p>example : const value = useContext(SomeContext)</p>
         </section>

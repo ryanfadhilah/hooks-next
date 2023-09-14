@@ -14,8 +14,8 @@ const HookImperativeHandler = () => {
           lets you customize the handle exposed as a ref
         </p>
         <p>
-          It can be used to manipulate <b className="font-bold">child state</b>{" "}
-          by calling out <b className="font-bold">child function</b> from{" "}
+          It can be used to ACCESS
+          <b className="font-bold">child function</b> from{" "}
           <b className="font-bold">Parent Component</b>
         </p>
         <p>example : useImperativeHandle(ref, createHandle, dependencies?)</p>
