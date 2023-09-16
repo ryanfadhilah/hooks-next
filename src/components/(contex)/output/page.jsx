@@ -1,4 +1,4 @@
-import { appContext } from "@/app/(page)/hookContex/page";
+import { appContext } from "@/components/content/Context";
 import React, { useContext } from "react";
 
 const Output = () => {

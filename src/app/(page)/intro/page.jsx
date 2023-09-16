@@ -1,5 +1,10 @@
 import React from "react";
 
+export const metadata = {
+  title: "Hooks Notes - Intro",
+  description: "Personal Hooks Notes for Intro",
+};
+
 function page() {
   return (
     <main className="w-full h-full flex flex-col gap-5">

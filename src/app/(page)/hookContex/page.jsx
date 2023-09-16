@@ -1,37 +1,16 @@
-"use client";
-import Input from "@/components/(contex)/input/page";
-import Output from "@/components/(contex)/output/page";
+import HookContext from "@/components/content/Context";
 
-import React, { createContext, useState } from "react";
+export const metadata = {
+  title: "Hooks Notes - Context",
+  description: "Personal Hooks Notes for Context",
+};
 
-export const appContext = createContext(null);
-
-const HookContext = () => {
-  const [name, setName] = useState("World!");
-
+const page = () => {
   return (
-    <appContext.Provider value={{ name, setName }}>
-      <div className="flex flex-col h-full gap-5">
-        <section className="flex flex-col bg-yellow-100 text-black p-5 gap-5 rounded-xl">
-          <p>
-            <b className="font-bold">useContext</b> is a React Hook that lets
-            you read and subscribe to context from your component.
-          </p>
-          <p>
-            It allows the <b className="font-bold">Child Component</b> to have
-            ACCESS <b className="font-bold">Parent State & Function</b>
-          </p>
-          <p>example : const value = useContext(SomeContext)</p>
-        </section>
-
-        <section className="flex flex-col bg-teal-950 rounded-xl gap-5 p-5">
-          <Output></Output>
-
-          <Input></Input>
-        </section>
-      </div>
-    </appContext.Provider>
+    <div className="flex w-full h-full">
+      <HookContext></HookContext>
+    </div>
   );
 };
 
-export default HookContext;
+export default page;
